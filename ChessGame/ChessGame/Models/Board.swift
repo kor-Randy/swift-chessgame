@@ -8,19 +8,23 @@
 import Foundation
 
 class Board {
-    var positions: [[Position]] = [[]]
+    var pieces: [PieceType] = []
     
     func reset() {
-        positions.removeAll(keepingCapacity: true)
-        for rank in Position.Ranks {
-            var row: [Position] = []
-            for file in Position.Files {
-                if let position = Position(rank: rank, file: file) {
-                    row.append(position)
+        initializePieces()
+    }
+    
+    private func initializePieces() {
+        pieces.removeAll(keepingCapacity: true)
+        for color in PieceColor.colors {
+            for stringPosition in Pawn.StartPosition[color.rawValue] {
+                guard let position = StringConverter.convertToPosition(stringPosition) else {
+                    return
                 }
+                pieces.append(Pawn(position: position, color: color))
             }
-            positions.append(row)
         }
     }
+    
     
 }

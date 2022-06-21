@@ -9,12 +9,26 @@ import Foundation
 
 class Match {
     let board: Board = Board()
-    let players: [Player] = [Player](arrayLiteral: Player(color: .white, score: 0), Player(color: .black, score: 0))
+    let players: [Player] = [Player](arrayLiteral: Player(color: .white), Player(color: .black))
     
     func reset() {
         board.reset()
-        players.forEach {
-            $0.reset()
+    }
+    
+    func printBoard() {
+        for file in Position.Files {
+            var rowString = ""
+            for rank in Position.Ranks {
+                if let position = Position(rank: rank, file: file) {
+                    if let piece = board.pieces.first(where: { $0.position == position }) {
+                        rowString.append(piece.pieceString)
+                    } else {
+                        rowString.append(".")
+                    }
+                    
+                }
+            }
+            print(rowString)
         }
     }
 }
