@@ -1,14 +1,14 @@
 //
-//  TestUtility.swift
-//  ChessTests
+//  StringConverter.swift
+//  ChessGame
 //
-//  Created by 지현우 on 2022/06/20.
+//  Created by 지현우 on 2022/06/21.
 //
 
 import Foundation
 
-class TestUtility {
-    static func makePosition(_ string: String) -> Position? {
+final class StringConverter {
+    static func convertToPosition(_ string: String) -> Position? {
         guard string.count == 2 else {
             return nil
         }

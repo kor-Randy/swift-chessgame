@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Position {
+class Position: Equatable {
     static let Ranks: [Character] = ["A", "B", "C", "D", "E", "F", "G", "H"]
     static let Files: [Character] = ["1", "2", "3", "4", "5", "6", "7", "8"]
     var rank: Character
@@ -22,6 +22,17 @@ class Position {
         }
     }
     
+    static func == (lhs: Position, rhs: Position) -> Bool {
+        if lhs.rank == rhs.rank, lhs.file == rhs.file {
+            return true
+        }
+        
+        return false
+    }
+}
+
+// MARK: Convert Position
+extension Position {
     func getRankNum() -> Int {
         let byte = rank.asciiValue
         var value: Int = 0

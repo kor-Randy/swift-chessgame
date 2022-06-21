@@ -8,15 +8,10 @@
 import Foundation
 
 class Player {
-    let color: PieceColor
-    var score: Int
+    private let color: PieceColor
     
-    init(color: PieceColor, score: Int) {
+    init(color: PieceColor) {
         self.color = color
-        self.score = score
     }
     
-    func reset() {
-        score = 0
-    }
 }

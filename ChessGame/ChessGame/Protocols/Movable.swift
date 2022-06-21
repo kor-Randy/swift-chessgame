@@ -8,6 +8,7 @@
 import Foundation
 
 protocol Movable {
-    func canMove(to position: Position)
+    var movablePosition: [Position] { get }
+    func canMove(to position: Position) -> Bool
     func move(to position: Position)
 }
