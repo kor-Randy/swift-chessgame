@@ -8,12 +8,7 @@
 import Foundation
 
 final class Bishop: PieceType {
-    enum PositionSide: Int {
-        case left = 0
-        case right = 1
-    }
     static let StartablePosition: [[String]] = [["C8", "F8"], ["C1", "F1"]]
-    var positionSide: PositionSide = .left
     var position: Position
     var color: PieceColor
     var pieceString: String {
@@ -33,11 +28,6 @@ final class Bishop: PieceType {
     init(position: Position, color: PieceColor) {
         self.position = position
         self.color = color
-    }
-    
-    convenience init(position: Position, color: PieceColor, positionSide: PositionSide) {
-        self.init(position: position, color: color)
-        self.positionSide = positionSide
     }
     
     func canMove(to position: Position) -> Bool {
