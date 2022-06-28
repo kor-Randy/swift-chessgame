@@ -24,7 +24,7 @@ final class Bishop: PieceType {
         }
     }
     
-    var movablePosition: [Position] {
+    var movablePositions: [Position] {
         let positions: [Position] = []
         
         return positions
@@ -41,7 +41,7 @@ final class Bishop: PieceType {
     }
     
     func canMove(to position: Position) -> Bool {
-        if movablePosition.contains(where: { $0 == position }) {
+        if movablePositions.contains(where: { $0 == position }) {
             return true
         }
         return false

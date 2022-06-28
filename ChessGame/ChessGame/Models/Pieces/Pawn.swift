@@ -15,14 +15,16 @@ final class Pawn: PieceType {
         if color == .black {
             return "♟"
         } else {
-            return  "♙"
+            return "♙"
         }
     }
     
-    var movablePosition: [Position] {
+    var movablePositions: [Position] {
         var positions: [Position] = []
         
         if color == .black, let movablePosition = Position(rank: Character(UnicodeScalar(position.getRankNum() + 1)!), file: position.file) {
+            positions.append(movablePosition)
+        } else if color == .white, let movablePosition = Position(rank: Character(UnicodeScalar(position.getRankNum() - 1)!), file: position.file) {
             positions.append(movablePosition)
         }
         
@@ -35,14 +37,13 @@ final class Pawn: PieceType {
     }
     
     func canMove(to position: Position) -> Bool {
-        if movablePosition.contains(where: { $0 == position }) {
+        if movablePositions.contains(where: { $0 == position }) {
             return true
         }
         return false
     }
     
     func move(to position: Position) {
-        
     }
 }
 

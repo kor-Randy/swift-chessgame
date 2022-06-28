@@ -8,20 +8,27 @@
 import Foundation
 
 class Board {
-    var pieces: [PieceType] = []
+    var pieces: [Position: PieceType] = [:]
     
     func reset() {
         initializePieces()
     }
     
     private func initializePieces() {
-        pieces.removeAll(keepingCapacity: true)
+        pieces.removeAll()
         for color in PieceColor.colors {
             for stringPosition in Pawn.StartPosition[color.rawValue] {
                 guard let position = StringConverter.convertToPosition(stringPosition) else {
                     return
                 }
-                pieces.append(Pawn(position: position, color: color))
+                pieces[position] = Pawn(position: position, color: color)
+            }
+            
+            for stringPosition in Bishop.StartablePosition[color.rawValue] {
+                guard let position = StringConverter.convertToPosition(stringPosition) else {
+                    return
+                }
+                pieces[position] = Bishop(position: position, color: color)
             }
         }
     }

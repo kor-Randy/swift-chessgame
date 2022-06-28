@@ -21,6 +21,9 @@
 		C2057FF428608988009F992E /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2057FEB286088F6009F992E /* PieceType.swift */; };
 		C24D52942861A0B800E4730D /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E228182861587F00BF657F /* Pawn.swift */; };
 		C24D52962861A65200E4730D /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D52952861A65200E4730D /* Bishop.swift */; };
+		C2538D342869923000779A0D /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2538D332869923000779A0D /* StackView.swift */; };
+		C2538D362869935300779A0D /* PositionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2538D352869935300779A0D /* PositionButton.swift */; };
+		C2C184EB28698A6200FFB52B /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D52952861A65200E4730D /* Bishop.swift */; };
 		C2CDFAB32860876E003F79DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CDFAB22860876E003F79DB /* AppDelegate.swift */; };
 		C2CDFAB52860876E003F79DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CDFAB42860876E003F79DB /* SceneDelegate.swift */; };
 		C2CDFAB72860876E003F79DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CDFAB62860876E003F79DB /* ViewController.swift */; };
@@ -60,6 +63,8 @@
 		C2057FEB286088F6009F992E /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		C2057FED28608918009F992E /* Movable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movable.swift; sourceTree = "<group>"; };
 		C24D52952861A65200E4730D /* Bishop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
+		C2538D332869923000779A0D /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		C2538D352869935300779A0D /* PositionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionButton.swift; sourceTree = "<group>"; };
 		C2CDFAAF2860876E003F79DB /* ChessGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CDFAB22860876E003F79DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2CDFAB42860876E003F79DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +128,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		C2538D322869922200779A0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2538D332869923000779A0D /* StackView.swift */,
+				C2538D352869935300779A0D /* PositionButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C2CDFAA62860876E003F79DB = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +160,7 @@
 		C2CDFAB12860876E003F79DB /* ChessGame */ = {
 			isa = PBXGroup;
 			children = (
+				C2538D322869922200779A0D /* Views */,
 				C2E2281E28615AEC00BF657F /* Extensions */,
 				C2E2281A28615A7B00BF657F /* Utilitys */,
 				C2057FE928608896009F992E /* Protocols */,
@@ -335,7 +350,9 @@
 			files = (
 				C2E228192861587F00BF657F /* Pawn.swift in Sources */,
 				C2CDFAB72860876E003F79DB /* ViewController.swift in Sources */,
+				C2538D342869923000779A0D /* StackView.swift in Sources */,
 				C2CDFAB32860876E003F79DB /* AppDelegate.swift in Sources */,
+				C2538D362869935300779A0D /* PositionButton.swift in Sources */,
 				C2057FE728608890009F992E /* Board.swift in Sources */,
 				C2CDFAB52860876E003F79DB /* SceneDelegate.swift in Sources */,
 				C2057FEC286088F6009F992E /* PieceType.swift in Sources */,
@@ -358,6 +375,7 @@
 				C2057FF428608988009F992E /* PieceType.swift in Sources */,
 				C2057FF02860897F009F992E /* Board.swift in Sources */,
 				C24D52942861A0B800E4730D /* Pawn.swift in Sources */,
+				C2C184EB28698A6200FFB52B /* Bishop.swift in Sources */,
 				C2057FF128608982009F992E /* Player.swift in Sources */,
 				C2057FEF28608966009F992E /* Match.swift in Sources */,
 				C2E2282428615D6300BF657F /* StringConverter.swift in Sources */,
@@ -535,6 +553,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -563,6 +582,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

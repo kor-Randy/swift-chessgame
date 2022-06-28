@@ -20,7 +20,7 @@ class Match {
             var rowString = ""
             for rank in Position.Ranks {
                 if let position = Position(rank: rank, file: file) {
-                    if let piece = board.pieces.first(where: { $0.position == position }) {
+                    if let piece = board.pieces[position] {
                         rowString.append(piece.pieceString)
                     } else {
                         rowString.append(".")
